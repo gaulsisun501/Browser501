@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 수학객체 </title>
+</head>
+<body>
+location.reload();
+<script>
+var userSel = prompt("스크립트 프롬프트: 가위,바위,보 중 선택하세요.","");
+var selNum = 0;
+
+switch(userSel.trim()){
+	case "가위": selNum=1; break;
+	case "바위": selNum=2; break; 
+	case "보": selNum=3; break; 
+	default : alert("잘못입력");
+	location.reload();
+}
+
+//1부터 3까지 난수(정수)를 발생(컴퓨터 가위(1), 바위(2), 보(3))
+var random = Math.ceil(Math.random()*3);
+
+/*난수를 이용해 컴퓨터 가위 바위 보 이미지 출력*/
+document.write("<image src='images/math_img_"+random+".jpg'>");
+
+//사용자가 낸 값과 컴퓨터의 값이 일치하는지 조건검사.
+//setTimeout == java: Thread.sleep()과 동일, 정해진 시간이 지난후에 실행
+if(selNum==random){ 
+	window.setTimeout(function(){ alert('맞혔습니다. 축하합니다.!!!'); }, 3000);
+}else{ 
+	window.setTimeout(function(){ alert('틀렸습니다.다음기회에~~'); }, 3000);
+}
+//javascript window : https://velog.io/@bungouk6829/Javascript 참조
+</script>
+</body>
+</html>

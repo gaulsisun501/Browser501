@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+Object:: const person = {firstName:"John", lastName:"Doe", age:46};
+<script>
+// 배열 형식1
+	var a1 = new Array();
+	a1[0] = 10;
+	a1[1] = "20";
+	a1[2] = true;
+	for (i in a1){
+		document.write(a1[i],"<br>");	
+	}
+	
+// 배열 형식2
+	var a2 = new Array(10,"20",true);
+	for (i in a2){
+		document.write(a2[i],"<br>");	
+	}
+	
+// 배열 형식3
+	var a3 = [10,"20",true];
+	a3.push(100); 
+	for (i in a3){
+		document.write(a3[i],"<br>");	
+	}
+</script>
+</body>
+</html>

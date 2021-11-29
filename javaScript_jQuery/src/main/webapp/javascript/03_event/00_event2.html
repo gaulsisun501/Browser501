@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+event : 브라우저에서 방문객이 취하는 모든 동작을 이벤트라고 한다.<br>
+eventHandler : 이벤트가 발생했을 때 javascript 실행문을 실행하는 것<br>
+
+
+2가지 방식으로 click 이벤트와 mouseover 이벤트를 등록시켜 배경색 바꾸기<br> 
+1)이벤트에서 function 호출
+2)window.onload에 익명함수를 선언하여, 그안에서 getElementById의 이벤트에 대해서 익명함수 선언<br>
+
+<script>
+	var color = ["white","yellow","aqua","purple"];
+	var i = 0;
+	function colorBg() {
+		i++;
+		if(i >= color.length)
+			i = 0;
+		//document.getElementsByTagName("body")[0].style.backgroundColor = color[i];
+		var bodyTag = document.getElementsByTagName("body")[0]
+		bodyTag.style.backgroundColor = color[i];
+	}
+	
+	window.onload = function() { //jquery의 ready와 같은 개념
+		//btn2
+		document.getElementById("btn2").onclick = function(){
+			colorBg();
+		}
+		//btn3
+		document.getElementById("btn4").onmouseover = function(){
+			colorBg();
+		}
+	}
+</script>
+	<button onclick="colorBg();">버튼1</button>
+	<button id="btn2">버튼2</button>
+	<button onmouseover='colorBg()' onfocus='colorBg()'>버튼3</button>
+	<button id="btn4">버튼4</button>
+</body>
+</html>

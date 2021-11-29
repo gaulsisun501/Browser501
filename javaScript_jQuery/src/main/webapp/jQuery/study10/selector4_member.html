@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 정의 필터 셀렉터를 이용하여 폼 요소 다루기 </title>
+<style>
+	*{padding:0; margin:0; box-sizing:border-box;}
+	body{border:1px solid blue; padding:10px; margin:10px; width:300px;}
+    .item{display: inline-block; width:90px; margin-bottom:10px}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../js/jquery-migrate-1.4.1.min"></script>
+<script type="text/javascript"></script>
+<script>
+   $(document).ready(function() {
+
+	$("#regBtn").click(function(){
+		invalidItem();
+	});
+
+	function invalidItem(){
+		var user_id = $('#userId').val();
+		var user_name = $('#userName').val();
+		var pwd = $('#pwd').val();
+		var pwdChk = $('#pwdConfirm').val();
+		
+		if(user_id == ""){
+			alert("아이디를 입력하세요.");
+			$("#userId").focus();
+			return false;    
+		}
+	
+		if(user_name == ""){
+			alert("이름을 입력하세요.");
+			$("#userName").focus();
+			return false;    
+		}
+		          
+		if( pwd == "" || pwdChk == ""){
+			alert("암호를 입력하세요.");    
+			return false;          
+		}
+		
+		if(pwd != pwdChk) {
+			alert("암호가 일치하지 않습니다.");
+			$("#pwdConfirm").focus();
+			return false;
+		}
+		alert(user_name + "님 회원 가입을 축하합니다.");
+		clearInput();
+	}
+      
+	function clearInput(){
+		$("input[type=text], input[type=password]").val("");
+	}      
+   });
+</script>   
+</head> 
+<body>
+	<form action="result.jsp" method="get">
+     <div> <span class="item"> 아이디 * </span> <input name="userId" id="userId" type="text"></div>
+     <div> <span class="item"> 이름   * </span> <input name="userName" id="userName" type="text"></div>
+     <div> <span class="item"> 암호   * </span> <input name="pwd" id="pwd" type="password"></div>
+     <div> <span class="item"> 암호 확인  * </span> <input id="pwdConfirm" type="password"></div>
+     <input type="submit" id="regBtn" value="회원가입">         
+	</form>
+</body>
+</html>

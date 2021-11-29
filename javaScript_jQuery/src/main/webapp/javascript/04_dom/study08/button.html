@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> DOM 객체 </title>
+</head>
+<body>
+<h1 id="title">마우스 아웃</h1>
+<a href="#" id="btn"><img src="images/btn_out.gif" alt="버튼" /></a>
+<p id="img_src"></p>
+<script>
+   var t=document.getElementById("title");
+   var theBtn=document.getElementById("btn");
+   var s=document.getElementById("img_src");
+
+   //버튼위에 mouseover 되었을때
+   theBtn.onmouseover = function(){
+	      t.innerHTML="마우스 오버";						//위 글자
+	      theBtn.firstChild.src="images/btn_over.gif";	//이미지
+	      s.innerHTML=theBtn.firstChild.src;			//아래주소값
+	}
+   
+   //버튼위에 mouseout 되었을때(default상태), 추가적으로 버튼주소 추가하여 출력하기
+   theBtn.onmouseout = function(){
+	      t.innerHTML="마우스 아웃";
+	      theBtn.firstChild.src="images/btn_out.gif";
+	      s.innerHTML=theBtn.firstChild.src;
+	}
+   
+// //버튼위에 mouseover 되었을때
+//    theBtn.addEventListener("mouseover", function(){
+//       theBtn.firstChild.src="images/btn_over.gif";
+//       s.innerHTML=theBtn.firstChild.src;
+//       t.innerHTML="마우스 오버";
+//    });
+
+// //버튼위에 mouseout 되었을때(default상태), 추가적으로 버튼주소 추가하여 출력하기
+//    theBtn.addEventListener("mouseout", function(){
+//       theBtn.firstChild.src="images/btn_out.gif";
+//       s.innerHTML=theBtn.firstChild.src;
+//       t.innerHTML="마우스 아웃";      
+//    });
+   
+</script>
+</body>
+</html>

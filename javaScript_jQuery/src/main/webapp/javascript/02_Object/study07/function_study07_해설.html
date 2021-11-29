@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2019년 달력</title>
+<SCRIPT>
+
+/* Table 태그를 사용하고, 현재 날짜에는 빨간색으로 표시하고 현재 시간이 그 날짜에 출력된다.
+현재 시간은 오전/오후 형태로 출력된다.
+시간을 읽어와서 오전/오후로 브라우저에 보여줄 수 있게 해줍니다. 
+ */
+function get_Time() 
+{
+  var now = new Date();
+  var hour = now.getHours();
+  var minute = now.getMinutes();
+  var ampm;
+
+  if (hour >= 12) {
+      hour -= 12;
+      ampm = "오후";
+   } else{
+      ampm = "오전";
+   }
+
+  hour = (hour == 0) ? 12 : hour;
+
+  if (minute < 10)
+    minute = "0" + minute 
+
+  return ampm + hour + ":" + minute
+}
+
+// 년과 달을 받아서 마지막 일을 알아 냅니다.
+function get_Day(year, month) 
+{
+ var Last_Mon = new Array(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+ var Mon2
+
+ if (year % 4 == 0) 
+  Mon2 = true 
+ else 
+  Mon2 = false 
+
+ Last_Mon[1] = (Mon2) ? 29 : 28 
+	
+ return Last_Mon[month]
+}
+
+// table태그를 이용하여 달력을 만들어 줍니다.
+function drawCal(firstDay, lastDate, date, year, monthName) 
+{
+ var text = ""
+ text += "<CENTER>";
+ text += "<table style='border:1px black solid;'>";
+ text += "<th colspan=7 BGCOLOR=#F0F0F0>";
+ text += "<FONT COLOR=darkblue size=6> ";
+ text += year + "년" + (monthName+1) + "월";
+ text += "</font>";
+ text += "</th>";
+ 
+ var openCol = "<TD BGCOLOR=#FFEFFF WIDTH=45 HEIGHT=40>";
+  openCol += "<FONT COLOR=darkblue> ";
+  
+ var closeCol = "</FONT></TD>";
+ 
+ text += "<TR ALIGN=center VALIGN=center BGCOLOR=#FFEFFF>"
+ 
+ var weekDay = new Array("일", "월", "화", "수", "목", "금", "토")
+
+ // 달력의 일, 월, 화, 수, 목, 금, 토, 일을 출력합니다.
+ for (var i=0; i<weekDay.length; i++) {
+	text += openCol + weekDay[i] + closeCol;		                 
+ }
+ text += "</TR>"
+ 
+ var digit = 1;
+ var curCell = 0;
+ 	
+ // 달력 표를 만들어 줍니다.
+ for (var row = 1; row <= Math.ceil((lastDate + firstDay - 1) / 7); ++row) 
+ {
+   text += "<TR ALIGN=right VALIGN=top BGCOLOR=#FFEFEE>"
+   
+   for (var col = 1; col <= 7; col++) 
+   {
+     if (digit > lastDate) break;
+
+     if (curCell < firstDay){
+    	 text += "<TD WIDTH=45 HEIGHT=40>&nbsp;</td>";
+     } else if (digit == date.getDate()){
+    	 text += "<TD BGCOLOR=#FFEFEE WIDTH=45 HEIGHT=40>";
+    	 text += "<FONT COLOR=red size=2>";
+    	 text += digit;
+    	 text += "<br>";
+    	 text += "<center>" +get_Time() + "</center>";
+    	 text += "</font>";
+    	 text += "</td>";
+    	 digit++;		     	 
+     } else {
+    	 text += "<TD BGCOLOR=#FFEFEE WIDTH=45 HEIGHT=40>"+digit+"</td>";
+    	 digit++;
+     }
+     curCell++;
+   }
+   text += "</TR>"
+ }
+
+ text += "</TABLE>"
+ text += "</CENTER>"
+
+ return text
+}
+
+window.onload = function() {
+	//현재 년도,월 구하기
+	var date=new Date();
+	var thisYear=date.getFullYear();
+	var thisMonth=date.getMonth();
+
+	//현재월 1일의 요일 
+	var theDate=new Date(thisYear, thisMonth, 1); 
+	var firstDay=theDate.getDay();
+
+	//마지막 일자
+	var lastDate = get_Day(thisYear, thisMonth);
+
+	//테이블 만들기
+	var text = drawCal(firstDay, lastDate, date, thisYear, thisMonth);
+	document.write(text);
+}
+</SCRIPT>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+5행 5열 테이블 만들기<br>
+1. HTML로 (5,5)테이블 만들고, 1부터 순차적으로 숫자 넣기<br>
+<table>
+<tr>
+	<td>1</td>
+	<td>2</td>
+	<td>3</td>
+	<td>4</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>6</td>
+	<td>7</td>
+	<td>8</td>
+	<td>9</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>11</td>
+	<td>12</td>
+	<td>13</td>
+	<td>14</td>
+	<td>15</td>
+</tr>
+<tr>
+	<td>16</td>
+	<td>17</td>
+	<td>18</td>
+	<td>19</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>21</td>
+	<td>22</td>
+	<td>23</td>
+	<td>24</td>
+	<td>25</td>
+</tr>
+</table>
+
+2. Javascrip로 (5,5)테이블 만들고, 1부터 순차적으로 숫자 넣기<br>
+<!-- <script>
+document.write('<table border="1"');
+for(var i=1;i<=5;i++){
+	document.write('<tr>');
+	for(var j=1;j<=5;j++){
+		document.write('<td>');
+	    document.write((i-1)*5+j);
+	    document.write('</td>');
+	}
+	document.write('</tr>');
+}
+document.write('</table>');
+</script> -->
+
+<script>
+var num=1;
+var t="<table border='1'>";
+for(var i=1; i<=5; i++){
+	t += "<tr>";
+	for(var k=1; k<=5; k++){
+		t += "<td>"+num+"</td>";
+		num++;
+	}
+	t += "</tr>";
+}
+t += "</table>";
+console.log(t);
+document.write(t);
+</script>
+
+
+</body>
+</html>
+
+
+<!-- 강사님이 한것 한번더 확인해볼것 -->

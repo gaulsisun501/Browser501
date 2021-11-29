@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+function: 일련의 실행문을 메모리에 저장했다가 필요할 때마다 호출해서 사용<br>
+함수선언 방법 2가지 function myFnc(){}, var theFnc = function(){}<br>
+함수선언/호출 순서가 상관없다.<br>
+<script>
+	var count=0;
+
+	myFnc();
+	
+	function myFnc() {
+		count++;
+		document.write("hello"+count,"<br>");
+	}
+
+	var theFnc = function() {
+		count++;
+		document.write("bye"+count,"<br>");
+	}
+	
+	theFnc();
+</script>
+</body>
+</html>

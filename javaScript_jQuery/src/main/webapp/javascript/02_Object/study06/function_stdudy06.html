@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <script>
+   //함수 Student
+        function Student(name, korean, math, english, science) {
+            // 속성
+			this.이름=name;
+			this.국어=korean;
+			this.수학=math;
+			this.영어=english;
+			this.과학=science;
+			this.총점=getSum();
+			this.평균=getAverage();
+				
+            // 합계
+			this.getSum = function(){
+				return korean + math + english + science;
+			}
+			// 평균
+			this.getAverage = function() {
+				return getSum/4;
+			}
+			this.toString = function(text) {
+				return text = num.toString();
+			}
+		}
+
+        // 학생 정보 배열을 만듭니다.
+		var students = [];
+        Student("윤인성",80,100,50,70);
+        Student("연하진",90,100,50,70);
+        Student("구지연",50,70,80,100);
+        Student("나선주",80,40,50,70);
+        Student("윤아린",70,100,50,70);
+        Student("윤명월",60,70,50,70);
+        Student("김미화",60,100,50,70);
+        Student("김연화",80,90,50,70);
+        Student("박아현",90,100,60,70);
+        Student("서준서",80,100,50,70);
+		
+        // 출력.
+        var output = '이름\t총점\t평균\n';
+        for(var i=0; i<students.length; i++){
+        	output += toString(students[i].총점);
+        }
+        
+        alert(output);
+
+	</script>
+</body>
+</html>

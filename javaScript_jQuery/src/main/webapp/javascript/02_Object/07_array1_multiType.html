@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	//d에 객체로 저장, java와 달리 다양한 type을 저장 가능
+	var d=[30,'홍길동',true];	
+	document.write(d[0],"<br>");
+
+	//반복문1
+	for(var i=0; i<d.length; i++){
+		document.write(d[i],"<br>");	
+	}
+	//반복문2(for~in)
+	for (i in d){
+		document.write(d[i],"<br>");	
+	}
+	
+</script>
+</body>
+</html>

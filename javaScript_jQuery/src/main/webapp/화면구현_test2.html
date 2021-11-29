@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.box > ul > li > p {color: orange;}
+	header .menu li:nth-child(2) {background: red;}
+	#wrap .content .prod {border: 3px dashed gray;}
+</style>
+</head>
+<body>
+<hr>
+1. .box > ul > li > p {color: orange;}<br>
+
+<div class="box">
+	<ul>
+		<li><p>aaa</p></li>
+		<li><p>bbb</p></li>
+		<li>
+			<ul>
+				<li>aaa</li>
+				<li><p>bbb</p></li>
+			</ul>
+		</li>
+	</ul>
+	<ul>
+		<li>aaa</li>
+		<li><p>bbb</p></li>
+	</ul>
+</div>
+
+<hr>
+2. header .menu li:nth-child(2) {background: red;}<br>
+
+<header>
+	<div class="menu">
+		<ul>
+			<li>aaa</li>
+			<li><p>bbb</p></li>
+			<li><p>ccc</p></li>
+			<li><p>ddd</p></li>
+		</ul>
+	</div>
+</header>
+</body>
+</html>
+
+<hr>
+3. #wrap .content .prod {border: 3px dashed gray;}<br>
+<div id="wrap">wrap
+	<div class="content">content
+		<div class="prod">prod
+				<ul>
+					<li>aaa</li>
+					<li><p>bbb</p></li>
+					<li><p>ccc</p></li>
+					<li><p>ddd</p></li>
+				</ul>			
+		</div>
+	</div>
+</div>
