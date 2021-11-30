@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<script>
+$(function() {
+	$("#btnRead").click(function(){
+		$("#container").load("01_resource.html");
+  	});
+	
+	$("#btnSubject").click(function() {
+		$.ajax({
+			url:"02_subjectList.jsp",
+			datatype:"html",
+			success:function(data){
+				$("#container").html(data);
+			}
+		});
+	});
+	
+	$("#btnCheckLogin").click(function() {
+		$.ajax({
+			url:"03_checkLogin.jsp?no=3",
+			datatype:"html",
+			success:function(data){
+				$("#container").html(data);
+			}
+		});
+	});
+});
+
+</script>
+<body>
+AJAX: Asynchronous JavaScript And XML.<br>
+: JavaScript를 통해서 서버에 데이터를 요청하는 것, HTML form을 대신한 것<br>
+: 부분 로딩만 하므로 속도 빠르다. <br>
+: (예)네이버 같은 검색창에 '자동완성' 기능<br>
+:    페이스북이나 트위터 같은 SNS에서 글을 입력해도 전체가 아닌 해당 내용만 일부로딩되는 형태<br>
+AJAX Callback 함수: 서버로 부터 response가 도착했을 때, 실행되는 함수<br>
+
+<button id="btnRead">서버에서 데이터 가져오기</button><br>
+<button id="btnSubject">교과목 체크리스트</button><br>
+<button id="btnCheckLogin">로그인 체크</button><br>
+
+
+
+<br>
+<div id="container">이곳에 내용 넣기</div>
+</body>
+</html>

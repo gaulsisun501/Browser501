@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>키보드 접근성</title>
+<script>
+$(function() {
+	$("h1 a").on({
+		"mouseover focus":function(){
+			$(this).css("background-color", "red");		
+		},
+		"mouseout blur":function(){
+			$(this).css("background-color", "yellow");
+		}	
+	});
+	
+	//<h2>생성된 요소(mouseover:yellow, mouseout:aqua)</h2>
+	$("h2").append("<a href=''#'>생성된 요소</a>");
+	
+	$("h2 a").on("mouseover focus", function() {
+		$(this).css("background-color", "yellow");
+	});
+	
+	$(document).on("mouseout blur","h2 a", function() {
+		$(this).css("background-color", "aqua");
+	})
+// 	$("h2").text("생성된 요소(mouseover:yellow, mouseout:aqua)");
+// 	$("h2").on({
+// 		"mouseover focus":function(){
+// 			$(this).css("background-color", "yellow");		
+// 		},
+// 		"mouseout blur":function(){
+// 			$(this).css("background-color", "aqua");
+// 		}	
+// 	});
+});
+</script>
+</head>
+<body>
+on(): 선택요소에 한개 이상의 이벤트를 등록<br>
+	jQuery1.7에서 delegate() => on()
+//h1 a안에 키보드를 고려한 버튼에 마우스가 올라갔을 때와 벗어 났을 때 각각에 대하여 설계하기<br>
+<h1><a href="#">버튼</a></h1>
+<h2></h2>
+</body>
+</html>
