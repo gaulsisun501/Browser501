@@ -1,0 +1,37 @@
+table, td, th {
+	border: 1px solid #595959;
+	border-collapse : collapse;
+}
+
+.custom_calendar_table {
+    text-align: center;
+    background-color: #323232;
+}
+
+.custom_calendar_table td {
+    width:50px;
+    height:50px;
+    color: white;
+}
+
+.custom_calendar_table thead.cal_date th {
+	font-size: 1.5rem;
+    color: #FFB900;
+}
+
+.custom_calendar_table thead.cal_week th {
+    color: white;
+}
+
+.custom_calendar_table thead.cal_move th {
+    color: white;
+}
+
+.custom_calendar_table tbody td:nth-child(1) {
+    color: red;
+}
+
+.custom_calendar_table tbody td.select_day {
+    background-color: #288CFF;
+    color: #fff;
+}
