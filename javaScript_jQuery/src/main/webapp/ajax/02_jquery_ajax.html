@@ -13,7 +13,7 @@ $(document).ready(function() {
 	
 	$("#btnSubject").click(function() {
 		$.ajax({
-			url:"02_subjectList.jsp",
+			url:"source/02_subjectList.jsp",
 			datatype:"html",
 			success:function(data){
 				$("#container").html(data);
@@ -23,7 +23,7 @@ $(document).ready(function() {
 	
 	$("#btnCheckLogin").click(function() {
 		$.ajax({
-			url:"03_checkLogin.jsp?no=3",
+			url:"source/03_checkLogin.jsp?no=3",
 			datatype:"html",
 			success:function(data){
 				$("#container").html(data);

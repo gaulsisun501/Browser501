@@ -11,15 +11,22 @@ table, td, th {
     height:50px;
 }
 
-.custom_calendar_table thead.cal_yyymm th {
+.custom_calendar_table thead.cal_yyyymm th {
 	font-size: 1.5em;
     color: #FFB900;
 }
 
-.custom_calendar_table thead.cal_week th, tfoot.cal_move th{
+.custom_calendar_table thead.cal_week th{
 	height:50px;
     color: white;
 }
+
+.custom_calendar_table tfoot.cal_move th{
+	height:50px;
+    color: white;
+    cursor: pointer;
+}
+.prev:hover,.next:hover { color: #2693C4; }
 
 .custom_calendar_table tbody td:nth-child(1), thead.cal_week th:nth-child(1) {
     color: red;
