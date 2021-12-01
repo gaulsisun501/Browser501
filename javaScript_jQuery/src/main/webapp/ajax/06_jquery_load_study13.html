@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+div {
+	width:200px;
+    float: left;
+}
+</style>
+<script>
+$(function() {
+	$("#menu1").click(function() {
+		$("#span1").load("source/06_menu.html");
+	});
+	
+	$("#menu2").click(function() {
+		$("#span2").load("source/06_menu.html li");
+	});
+});
+
+</script>
+<body>
+<div>
+<a id="menu1" href="#">메뉴보기1</a>
+<span id="span1"></span>
+</div>
+
+<div>
+<a id="menu2" href="#">메뉴보기2</a>
+<span id="span2"></span>
+</div>
+</body>
+</html>

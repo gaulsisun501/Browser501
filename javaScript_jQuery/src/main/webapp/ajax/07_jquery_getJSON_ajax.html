@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function() {
+		$.ajax({
+	        url: "source/07_item.json",
+	        dataType: "json",
+	        success: function(data, textStatus){
+				$("#treeData").append("<tr><td>id</td><td>name</td><td>price</td><td>description</td></tr>");
+				
+				$.each(data,function(){
+					$("#treeData").append("<tr><td>"+this.id+"</td><td>"+this.name+"</td><td>"+this.price+"</td><td>"+this.description+"</td></tr>");
+				});
+        	}
+		});
+			
+	});
+</script>
+</head>
+<body>
+<table id="treeData" border=1></table>
+</body>
+</html>
