@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<%
+	int a = Integer.parseInt(request.getParameter("a"));
+	int b = Integer.parseInt(request.getParameter("b"));
+%>
+a * b = <%= a * b %>
 </body>
 </html>
