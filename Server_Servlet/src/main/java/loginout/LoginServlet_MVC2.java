@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+//MVC::Controller
 // '/login': 요청한 파일(login_servlet_mvc2.html)의 위치
 @WebServlet("/login/login_mvc2")
 public class LoginServlet_MVC2 extends HttpServlet {
@@ -22,6 +23,7 @@ public class LoginServlet_MVC2 extends HttpServlet {
 		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
+		
 		PrintWriter out = response.getWriter();
 		
 		if(id.equals("admin") && pw.equals("1234")) {
