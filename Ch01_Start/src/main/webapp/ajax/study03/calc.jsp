@@ -1,17 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+
 <%
-	int num1 = Integer.parseInt(request.getParameter("num1"));
-	int num2 = Integer.parseInt(request.getParameter("num2"));
-	int result = num1+num2;
+	String value1 = request.getParameter("v1");
+    int v1 = Integer.parseInt(value1);
+	String value2 = request.getParameter("v2");
+	int v2 = Integer.parseInt(value2);
+	System.out.println(v1+v2);
+	out.print(v1+v2);
 %>
-<%=result %>
-</body>
-</html>

@@ -2,30 +2,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JSP::AJAX::DB</title>
+<title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-$(function() {
-	$("#btn").on("click",function(){
-		$.ajax({
-			url:'calc.jsp',
-			type:'post',
-			data:{
-				num1: $("#num1").val(),
-				num2: $("#num2").val()
-			},
-			success:function(response){
-				$('#result').html(response);
-			}
+	$(document).ready(function() {
+		$("#cal").on("click",function(){
+			$.ajax({
+				type:"post",
+				url:"calc.jsp",
+				data:{
+					v1:$("#v1").val(),
+					v2:$("#v2").val()
+					
+				},
+				dataType:"text",
+				success: function(responseData,status,xhr) {
+					$("#result").text(responseData);
+				},
+				error:function(xhr,status, error){
+					console.log(error);
+				}
+			});
 		});
 	});
-});
 </script>
+
 </head>
 <body>
-값1: <input type="text" id="num1"><br>
-값2: <input type="text" id="num2"><br>
-<button id="btn">계산</button><br><br>
-<span id="result"></span>
+값1:: <input type="text" name="v1" id="v1"><br>
+값2:: <input type="text" name="v2" id="v2"><br><br>
+<button id="cal">계산</button>
+<div id="result"></div>
 </body>
 </html>
