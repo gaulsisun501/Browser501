@@ -1,7 +1,5 @@
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +7,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-현재시각:<%=new Date()%>
+<%
+	int sum = 0;
+	for(int i=0; i<=10 ; i++){
+		sum += i;
+	}
+%>
+1~10의 합 : <%=sum %>
+<br>
+<%
+	int sum2 = 0;
+	for(int i=11; i<=20; i++){
+		sum2 += i;
+	}
+%>
+11~20의 합 : <%=sum2 %>
 </body>
 </html>

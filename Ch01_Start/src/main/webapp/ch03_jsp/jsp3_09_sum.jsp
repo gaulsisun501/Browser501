@@ -1,17 +1,18 @@
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>현재 시간</title>
+<title>Insert title here</title>
 </head>
 <body>
 <%
-	Date now = new Date();
+	int sum = 0;
+	for(int i=0; i<=10 ; i++){
+		sum += i;
+	}
 %>
-현재시각:<%=now %>
-
+1~10까지의 합 : <%=sum %>
 </body>
 </html>

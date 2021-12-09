@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+Server Internal error 500 ::::
 </body>
 </html>

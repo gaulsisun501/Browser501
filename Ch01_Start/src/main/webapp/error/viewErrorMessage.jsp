@@ -1,7 +1,6 @@
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page trimDirectiveWhitespaces="true" %>
+<%@ page isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-현재시각:<%=new Date()%>
+<hr>
+에러 타입::<%=exception.getClass().getName() %><br>
+에러 메시지 : <b><%=exception.getMessage() %></b><hr>
+<img src="../ch05_04application/jsp기본객체.png">
 </body>
 </html>

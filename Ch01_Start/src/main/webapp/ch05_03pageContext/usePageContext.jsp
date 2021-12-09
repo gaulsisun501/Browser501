@@ -1,17 +1,17 @@
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>현재 시간</title>
+<title>120</title>
 </head>
 <body>
 <%
-	Date now = new Date();
+	HttpServletRequest h = (HttpServletRequest)pageContext.getRequest();
+	out.println((request == h)+"<br>");
+	
+	pageContext.getOut().println("안녕하세요!");
 %>
-현재시각:<%=now %>
-
 </body>
 </html>
