@@ -7,7 +7,7 @@
 <title>Jsp::include(168)</title>
 </head>
 <body>
-body_sub에서 name파라미터값 :: ${param.name }<hr>
+body_sub에서 name파라미터값 :: ${param.name }<br>
 name파라미터 목록:<br>
 <ul>
 <%
@@ -16,10 +16,9 @@ name파라미터 목록:<br>
 		out.println("<li>"+name+"</li>");
 	}
 %>
-<hr>
+</ul>
 <%-- body_sub에서 name1파라미터값 :: ${param.name1 }<hr> --%>
 body_sub에서 name1파라미터값 ::<%=request.getAttribute("name1") %>
-
-</ul>
+<hr>
 </body>
 </html>

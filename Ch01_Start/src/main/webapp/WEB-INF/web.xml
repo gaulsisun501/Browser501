@@ -57,7 +57,7 @@
     <url-pattern>/init</url-pattern>
   </servlet-mapping>
 
-  <error-page>
+<!--  <error-page>
 	<error-code>404</error-code>
 	<location>/error/error404.jsp</location>
   </error-page>
@@ -69,7 +69,23 @@
   <error-page>
 	<exception-type>java.lang.NullPointerException</exception-type>
 	<location>/error/errorNullPointer.jsp</location>
-  </error-page>
+  </error-page>-->
 
+  <jsp-config>
+	<jsp-property-group>
+		<url-pattern>/view/*</url-pattern>
+		<include-prelude>/common/variable.jspf</include-prelude>
+		<include-coda>/common/footer.jspf</include-coda>
+	</jsp-property-group>
+  </jsp-config>
+
+   <servlet>
+    <servlet-name>Personal</servlet-name>
+    <servlet-class>ch08_usebean.member.PersonalInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Personal</servlet-name>
+    <url-pattern>/pinfo</url-pattern>
+  </servlet-mapping>
 
 </web-app>
