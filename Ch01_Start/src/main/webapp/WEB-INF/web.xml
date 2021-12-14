@@ -88,4 +88,22 @@
     <url-pattern>/pinfo</url-pattern>
   </servlet-mapping>
 
+<!--	<servlet>
+        <servlet-name>AnimalServlet</servlet-name>
+        <servlet-class>ch10_session.AnimalServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AnimalServlet</servlet-name>
+        <url-pattern>/ch10_session/study10/animal</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ResultServlet</servlet-name>
+        <servlet-class>ch10_session.ResultServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResultServlet</servlet-name>
+        <url-pattern>/ch10_session/study10/result</url-pattern>
+    </servlet-mapping>-->
+
 </web-app>
