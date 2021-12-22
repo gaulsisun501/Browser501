@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>Server_Jsp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>start.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>ServletTest</servlet-name>
+    <servlet-class>StartXML</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletTest</servlet-name>
+    <url-pattern>/ch02_start/Start_Xml</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ServletTest2</servlet-name>
+    <servlet-class>study.Sprots_Servlet_Xml</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletTest2</servlet-name>
+    <url-pattern>/study02/SportXml</url-pattern>
+  </servlet-mapping>
+
+  <context-param>
+	<description>로깅여부</description>
+	<param-name>logEnabled</param-name>
+	<param-value>true</param-value>
+  </context-param>
+
+  <context-param>
+	<description>디버깅 레벨</description>
+	<param-name>debugLevel</param-name>
+	<param-value>5</param-value>
+  </context-param>
+
+  <servlet>
+    <servlet-name>InitParam</servlet-name>
+    <servlet-class>servlet.InitParamServlet</servlet-class>
+	<init-param>
+		<param-name>dirPath</param-name>
+		<param-value>c:\\test</param-value>
+	</init-param>
+		<init-param>
+		<param-name>userid</param-name>
+		<param-value>admin</param-value>
+	</init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InitParam</servlet-name>
+    <url-pattern>/init</url-pattern>
+  </servlet-mapping>
+
+<!--  <error-page>
+	<error-code>404</error-code>
+	<location>/error/error404.jsp</location>
+  </error-page>
+  <error-page>
+	<error-code>500</error-code>
+	<location>/error/error500.jsp</location>
+  </error-page>
+
+  <error-page>
+	<exception-type>java.lang.NullPointerException</exception-type>
+	<location>/error/errorNullPointer.jsp</location>
+  </error-page>-->
+
+   <servlet>
+    <servlet-name>Personal</servlet-name>
+    <servlet-class>ch08_usebean.member.PersonalInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Personal</servlet-name>
+    <url-pattern>/pinfo</url-pattern>
+  </servlet-mapping>
+
+<!--	<servlet>
+        <servlet-name>AnimalServlet</servlet-name>
+        <servlet-class>ch10_session.AnimalServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AnimalServlet</servlet-name>
+        <url-pattern>/ch10_session/study10/animal</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ResultServlet</servlet-name>
+        <servlet-class>ch10_session.ResultServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResultServlet</servlet-name>
+        <url-pattern>/ch10_session/study10/result</url-pattern>
+    </servlet-mapping>-->
+
+	<context-param>
+        <param-name>Name</param-name>
+        <param-value>GZ</param-value>
+    </context-param>
+
+	<context-param>
+        <param-name>Age</param-name>
+        <param-value>30</param-value>
+    </context-param>
+
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/WEB-INF/tlds/fn.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tlds/fn.tld</taglib-location>
+		</taglib>
+		<jsp-property-group>
+			<url-pattern>/view/*</url-pattern>
+			<include-prelude>/common/variable.jspf</include-prelude>
+			<include-coda>/common/footer.jspf</include-coda>
+		</jsp-property-group>
+	</jsp-config>
+
+</web-app>

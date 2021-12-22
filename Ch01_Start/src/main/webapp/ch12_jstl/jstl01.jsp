@@ -8,8 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>J
-STL(JSP Standard Tag Library) : 태그 만드는 커스텀 태그중에서 많이 사용되는 것을 모아서 표준으로 삼은것<br>
+<h3>JSTL(JSP Standard Tag Library) : 태그 만드는 커스텀 태그중에서 많이 사용되는 것을 모아서 표준으로 삼은것<br>
 :: 가독성을 높이기 위해서 사용
 </h3>
 <img src="jstl01.png"><br>
