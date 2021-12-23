@@ -18,3 +18,9 @@ USA화폐: <fmt:setLocale value="en_US"/>
         <fmt:formatNumber value="${num1 }" type="currency"></fmt:formatNumber>
 </body>
 </html> 
+
+<!-- 
+숫자 데이터 : 12345678.1234
+화폐 타입: ￦12,345,678
+USA화폐: $12,345,678.12 
+-->

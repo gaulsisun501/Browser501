@@ -16,7 +16,7 @@ public class SelectServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Command Pattern
+		//Command Pattern : 각 명령에 해당하는 로직처리 코드를 별도 클래스로 작성 하는 것
 
 				//requestURI():: /Server_Servlet/insert.dos
 				//getContextPath():: /Server_Servlet

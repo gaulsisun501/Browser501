@@ -20,7 +20,7 @@
 </head>
 <body>
 <h4>1~100:: 홀수의 합</h4>
-<c:set var="sum" value="0"></c:set>
+
 <c:forEach var="i" begin="1" end="100" step="2">
    <c:set var="sum" value="${sum+i }"></c:set>
 </c:forEach>
@@ -39,10 +39,22 @@
 	${status.index }-${status.count }-[${i }]<br>
 </c:forEach>
 
+<!-- 
+배열 intArray의  index 2~4 값을 i에 저장한다.
+index, count, 값
+2-1-[3]
+3-2-[4]
+4-3-[5] 
+-->
 
 <h4>Map 출력</h4>
 <c:forEach var="i" items="${map }">
 	${i.key } = ${i.value }<br>
 </c:forEach>
+
+<!-- 
+today = Wed Dec 22 21:38:03 KST 2021
+name = 홍길동 
+-->
 </body>
 </html> 
